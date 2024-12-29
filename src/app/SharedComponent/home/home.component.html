@@ -1,0 +1,8 @@
+<app-navbar></app-navbar>
+<div style="display: flex;background:#1f1f1f;padding-bottom: 6px;" #container>
+  <app-current-data class="div1" style="min-width: 20%;" [style.flexBasis.px]="div1Width" (sendData)="Selected($event)"></app-current-data>
+  <div class="resize-line" #resizeLine (mousedown)="startResize($event)"></div>
+  <!-- Uncomment and adjust as needed -->
+  <app-sample class="div2" style="min-width: 70%;padding-right: 2px;position:relative" [style.flexBasis.px]="div2Width" [receivedData2]="file"></app-sample>
+</div>
+<!-- <app-footer></app-footer> -->

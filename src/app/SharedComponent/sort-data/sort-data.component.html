@@ -1,0 +1,38 @@
+<div  class="select" >
+
+    <div  class="defult" >
+      <svg #element1 *ngIf="selectedSvg===1"  style="width:24px;" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-alphabetical-ascending" viewBox="0 0 24 24"><path d="M19 17H22L18 21L14 17H17V3H19M11 13V15L7.67 19H11V21H5V19L8.33 15H5V13M9 3H7C5.9 3 5 3.9 5 5V11H7V9H9V11H11V5C11 3.9 10.11 3 9 3M9 7H7V5H9Z" /></svg>
+      <svg #element1 *ngIf="selectedSvg===2"  style="width:24px;" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-alphabetical-descending" viewBox="0 0 24 24"><path d="M19 7H22L18 3L14 7H17V21H19M11 13V15L7.67 19H11V21H5V19L8.33 15H5V13M9 3H7C5.9 3 5 3.9 5 5V11H7V9H9V11H11V5C11 3.9 10.11 3 9 3M9 7H7V5H9Z" /></svg>
+      <svg #element1 *ngIf="selectedSvg===3"  style="width:24px;" fill="#ffffff"  xmlns="http://www.w3.org/2000/svg" id="mdi-sort-clock-ascending-outline" viewBox="0 0 24 24"><path d="M20 17H23L19 21L15 17H18V3H20V17M8 5C4.14 5 1 8.13 1 12C1 15.87 4.13 19 8 19C11.86 19 15 15.87 15 12C15 8.13 11.87 5 8 5M8 7.15C10.67 7.15 12.85 9.32 12.85 12C12.85 14.68 10.68 16.85 8 16.85C5.32 16.85 3.15 14.68 3.15 12C3.15 9.32 5.32 7.15 8 7.15M7 9V12.69L10.19 14.53L10.94 13.23L8.5 11.82V9" /></svg>
+      <svg #element1 *ngIf="selectedSvg===4"  style="width:24px;" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-clock-descending-outline" viewBox="0 0 24 24"><path d="M18 7H15L19 3L23 7H20V21H18V7M8 5C4.14 5 1 8.13 1 12C1 15.87 4.13 19 8 19C11.86 19 15 15.87 15 12C15 8.13 11.87 5 8 5M8 7.15C10.67 7.15 12.85 9.32 12.85 12C12.85 14.68 10.68 16.85 8 16.85C5.32 16.85 3.15 14.68 3.15 12C3.15 9.32 5.32 7.15 8 7.15M7 9V12.69L10.19 14.53L10.94 13.23L8.5 11.82V9" /></svg>
+      <svg #element1 *ngIf="selectedSvg===5"  style="width:24px;" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-calendar-ascending" viewBox="0 0 24 24"><path d="M21 17H24L20 21L16 17H19V3H21V17M8 16H11V13H8V16M13 5H12V3H10V5H6V3H4V5H3C1.89 5 1 5.89 1 7V18C1 19.11 1.89 20 3 20H13C14.11 20 15 19.11 15 18V7C15 5.89 14.11 5 13 5M3 18L3 11H13L13 18L3 18Z" /></svg>
+      <svg #element1 *ngIf="selectedSvg===6"  style="width:24px;" fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-calendar-descending" viewBox="0 0 24 24"><path d="M19 7H16L20 3L24 7H21V21H19V7M8 16H11V13H8V16M13 5H12V3H10V5H6V3H4V5H3C1.89 5 1 5.89 1 7V18C1 19.11 1.89 20 3 20H13C14.11 20 15 19.11 15 18V7C15 5.89 14.11 5 13 5M3 18L3 11H13L13 18L3 18Z" /></svg>
+  
+      </div>
+      <div class="option" *ngIf="open" #parent>
+        <ul >
+         <li (click)="selectedSVG(1)">
+          <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-alphabetical-ascending" viewBox="0 0 24 24"><path d="M19 17H22L18 21L14 17H17V3H19M11 13V15L7.67 19H11V21H5V19L8.33 15H5V13M9 3H7C5.9 3 5 3.9 5 5V11H7V9H9V11H11V5C11 3.9 10.11 3 9 3M9 7H7V5H9Z" /></svg>
+         </li>
+         <li (click)="selectedSVG(2)">
+          <svg  fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-alphabetical-descending" viewBox="0 0 24 24"><path d="M19 7H22L18 3L14 7H17V21H19M11 13V15L7.67 19H11V21H5V19L8.33 15H5V13M9 3H7C5.9 3 5 3.9 5 5V11H7V9H9V11H11V5C11 3.9 10.11 3 9 3M9 7H7V5H9Z" /></svg>
+         </li>
+         <li (click)="selectedSVG(3)">
+          <svg fill="#ffffff"  xmlns="http://www.w3.org/2000/svg" id="mdi-sort-clock-ascending-outline" viewBox="0 0 24 24">
+            <path d="M20 17H23L19 21L15 17H18V3H20V17M8 5C4.14 5 1 8.13 1 12C1 15.87 4.13 19 8 19C11.86 19 15 15.87 15 12C15 8.13 11.87 5 8 5M8 7.15C10.67 7.15 12.85 9.32 12.85 12C12.85 14.68 10.68 16.85 8 16.85C5.32 16.85 3.15 14.68 3.15 12C3.15 9.32 5.32 7.15 8 7.15M7 9V12.69L10.19 14.53L10.94 13.23L8.5 11.82V9" />
+          </svg>
+         </li>
+         <li (click)="selectedSVG(4)">
+          <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-clock-descending-outline" viewBox="0 0 24 24"><path d="M18 7H15L19 3L23 7H20V21H18V7M8 5C4.14 5 1 8.13 1 12C1 15.87 4.13 19 8 19C11.86 19 15 15.87 15 12C15 8.13 11.87 5 8 5M8 7.15C10.67 7.15 12.85 9.32 12.85 12C12.85 14.68 10.68 16.85 8 16.85C5.32 16.85 3.15 14.68 3.15 12C3.15 9.32 5.32 7.15 8 7.15M7 9V12.69L10.19 14.53L10.94 13.23L8.5 11.82V9" /></svg>
+         </li>
+         <li (click)="selectedSVG(5)">
+          <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-calendar-ascending" viewBox="0 0 24 24"><path d="M21 17H24L20 21L16 17H19V3H21V17M8 16H11V13H8V16M13 5H12V3H10V5H6V3H4V5H3C1.89 5 1 5.89 1 7V18C1 19.11 1.89 20 3 20H13C14.11 20 15 19.11 15 18V7C15 5.89 14.11 5 13 5M3 18L3 11H13L13 18L3 18Z" /></svg>
+         </li>
+         <li (click)="selectedSVG(6)">
+          <svg fill="#ffffff" xmlns="http://www.w3.org/2000/svg" id="mdi-sort-calendar-descending" viewBox="0 0 24 24"><path d="M19 7H16L20 3L24 7H21V21H19V7M8 16H11V13H8V16M13 5H12V3H10V5H6V3H4V5H3C1.89 5 1 5.89 1 7V18C1 19.11 1.89 20 3 20H13C14.11 20 15 19.11 15 18V7C15 5.89 14.11 5 13 5M3 18L3 11H13L13 18L3 18Z" /></svg>
+         </li>
+        </ul>
+       </div>
+  </div>
+  
+  

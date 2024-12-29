@@ -1,0 +1,96 @@
+.perant{
+    background-color: #181818;
+      border-bottom-left-radius: 6px;
+      border-bottom-right-radius: 6px;
+      display: flex;
+      border-top: 1px solid red;
+      height: 75px;
+      align-items: flex-end;
+  }
+  .speed{
+    color: white;
+      border: 1px solid blue;
+      width: fit-content;
+      padding: 2px;
+      background: black;
+      position: relative;
+      border-radius: 7px;
+      cursor: pointer;
+  }
+  .play{
+  border-right: 1px solid black;
+  padding: 0 4px;
+  }
+  .play i{
+    padding:5px;
+    font-size: 20px;
+    cursor: pointer;
+    color:white
+  }
+  .play i:first-child{
+    padding: 3px;
+    font-size: 22px;
+  }
+  .play i:hover{
+    color: blue;
+  }
+  small{
+    color: white;
+    padding: 0 2px;
+    text-align: start;
+    display: inline-block;
+  }
+  #canvas {
+    background-color: black;
+    width: 32%;
+    height: 100%;
+  }
+  .regionPart{
+    padding: 0 5px;
+    display: flex;
+  }
+  .regionChild{
+    display: flex;
+    padding: 5px;
+    border-right: 1px solid black;
+    color: white;
+    font-size: 12px;
+    flex-direction: column;
+    justify-content: space-around;
+  
+  }
+  .regionTime{
+    background-color: black;
+    border-radius: 4px;
+  }
+  .disabled {
+    opacity: 0.5; /* Reduce opacity for disabled state */
+    pointer-events: none; /* Disable pointer events for disabled state */
+  }
+  
+  /* Customize the appearance of the range input */
+  .custom-range {
+    -webkit-appearance: none;
+  
+    height: 10px;
+    margin: auto;
+    width: 90%;
+    border-radius: 5px;
+    background: #d3d3d3;
+    outline: none;
+    opacity: 1;
+    transition: opacity 0.2s;
+  }
+  
+  .speed div{
+    bottom: 32px;
+      border: 1px solid blue;
+      position: absolute;
+      background: black;
+      border-radius: 7px;
+      padding: 12px 0;
+      width: 200px;
+      display: flex;
+  }
+  
+  

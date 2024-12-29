@@ -1,0 +1,91 @@
+.active{
+    border-radius: 6px;
+      color: white;
+      background-color: #0042a3;
+  }
+  .nav{
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+    background: #1a1a1a;
+    color: white;
+  }
+  .navHead{
+    display: flex;
+    flex-direction: row;
+  }
+  .navHead li{
+    padding: 0px 5px;
+  }
+  input{
+    background-color: #2e2e2ede;
+    height: 40px!important;
+    min-height: 40px!important;
+    color: white;
+    font-size: 12px;
+    padding-top: 20px;
+    border: 1px solid black;
+  }
+  input:focus{
+    box-shadow: none;
+    color: white;
+    background-color: #2e2e2ede;
+  }
+  label::after{
+    background-color: rgba(0, 0, 0, 0)!important;
+  
+  }
+  form{
+    display: flex;
+      flex-direction: column;
+      align-items: center;
+  }
+  p{margin: 0;}
+  #buttonDiv{
+    width: 58.33333%;
+    margin: auto;
+  }
+  .name{
+    font-family: 'Playball', cursive;
+    color: blue;
+  }
+  img{
+    width: 30px;
+  }
+  .seting{
+    background-color: #1a1a1a;
+    display: flex;
+    flex-direction: column;
+  }
+  .headerSeting{
+    display: flex;
+    justify-content: space-between;
+    padding: 5px;
+    align-items: center;
+    border-bottom: 1px solid #000000;
+    border-bottom: 1px solid #313131;
+  }
+  .headerSeting span{
+    cursor: pointer;
+    display: flex;
+    padding: 4px;
+    border-left: 1px solid #313131;
+    justify-content: center;
+  }
+  .headerSeting span:hover{
+    color:blue;
+  }
+  .dataProfile{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+    border-top: 1px solid #000000;
+  }
+  label{    font-size: 13px;
+    display: inline-block;
+    color: azure;}
+  
+  
+  
+  
+  

@@ -1,0 +1,73 @@
+#parent{
+    overflow: hidden;
+  overflow-x: scroll;
+  position: relative;
+  height: 500px;
+  user-select: none;
+  
+  }
+  #waveform{
+    position: absolute;
+  
+      width: 10000px;
+  scrollbar-color:blue ;
+  height: 100%;
+  }
+  .region{
+    height: 100%;
+      position: absolute;
+      z-index: 4;
+  
+      background-color: #ffc10729;
+      width: 0px;
+      display: flex;
+      justify-content: space-between;
+  
+  }
+  
+  .region span{
+    width: 4px;
+  display: flex;
+  background: aqua;
+  height: 100%;
+  cursor: col-resize;
+  }
+  
+  
+  
+  
+  
+  
+  .zoom{
+    background-color: black;
+      display: flex;
+      justify-content: flex-end;
+      color: white;
+  }
+  
+  .zoom i::before{
+    transform: rotateY(180deg);
+  cursor: pointer;
+  }
+  .zoom i:hover::before{
+    color: blue;
+  }
+  .cursor:after {
+    content: '';
+    font-size: 1.5em;
+    position: absolute;
+    left: 0;
+    top: -28px;
+    transform: translateX(-50%);
+    height: 20px;
+    width: 20px;
+    background-color: brown;
+  }
+  
+  
+  
+  .disabled {
+    opacity: 0.5; /* Reduce opacity for disabled state */
+    pointer-events: none; /* Disable pointer events for disabled state */
+  }
+  

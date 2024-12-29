@@ -1,0 +1,17 @@
+<div class="perant col-9">
+    <app-edit-tool [addedRegion]="addedRegion" (sendFile)="received($event)" (croped)="Croped($event)" [FileChangedAfterProcess]="FileChangesAfterProcess"></app-edit-tool>
+  
+  <app-sample-view  [receivedData]="receivedData2" (RegionChanged)="changed($event)" [receivedData2]="recieve" [Croped]="croped" (FileChangesAfterProcess)="changedAfterProcess($event)"></app-sample-view>
+  <app-play [addedRegion2]="addedRegion2" style="margin-bottom: 0px;" [receivedData]="receivedData2" ></app-play>
+  </div>
+  <!-- strat loader -->
+  <div class="loader"
+  *ngIf="loader.isLoading|async"
+  >
+  <div class="loaderchild"></div>
+  
+  <br>
+  <p style="color: white;">loading.. {{loader.percent}}%</p>
+  </div>
+  <!-- end loader -->
+  

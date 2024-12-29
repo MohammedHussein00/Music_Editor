@@ -1,0 +1,81 @@
+.select{
+    width: 100%;
+    position: relative;
+  }
+  .defult{
+  
+  cursor: pointer;
+  
+  }
+  .defult img{
+    max-width: 16px;
+      position: absolute;
+      right: 9%;
+      top: 25%;
+  }
+  .rotate{
+    transform: rotate(180deg);
+  }
+  
+  ul::-webkit-scrollbar {
+    width: 8px;
+  }
+  ul::-webkit-scrollbar-track {
+    background-color: #898686;
+  
+  }
+  /* Customize the thumb (the draggable part of the scrollbar) */
+  ul::-webkit-scrollbar-thumb {
+    background-color: #feffff;
+    border: 2px solid #898686;
+    border-radius: 5px;
+  }
+  
+  
+  
+  
+  .option{
+  
+    position: absolute;
+    z-index: 110;
+    right: 0;
+  }
+  .option ul{
+    background-color: #1f1f1f;
+    margin-bottom: 0;
+    overflow: hidden;
+    padding: 0;
+    border: 1px solid #2165a9;
+    border-radius: 4px;
+  
+  }
+  
+  .option  ul li{
+    font-size: 23px;
+  
+    list-style-type: none;
+    cursor: pointer;
+    padding: 0 10px;
+  }
+  
+  .option ul li:hover{
+    background-color: #000000;
+  }
+  .option ul li:hover svg path {
+  fill: #0000ff;
+  }
+  li svg{
+    width: 24px;
+  }
+  .option ul li:hover i{
+  color: #0000ff;
+  }
+  .active{
+    background-color: crimson;
+  }
+  
+  
+  
+  
+  
+  

@@ -1,0 +1,73 @@
+<div class="perant">
+    <div class="play">
+      <div #speed class="speed" [ngClass]="{'disabled': !created}" >
+        {{currentSpeed|number: '1.1-1'}}x
+        <div #range *ngIf="rangeSpeed">
+        <input #range  type="range" min="0.1" max="8" step="0.1" [(ngModel)]="currentSpeed" (ngModelChange)="updatePlaybackRate()" class="custom-range form-range" id="customRange2">
+      </div>
+  
+      </div>
+      <div >
+        <i data-bs-toggle="tooltip" data-bs-placement="top" title="Play (Space)" class="bi bi-play" [ngClass]="{'disabled': !created}" (click)="playAudio()" *ngIf="!isPlaying"></i>
+        <i  data-bs-toggle="tooltip" title="Puase (Space)" class="bi bi-pause" [ngClass]="{'disabled': !created}" (click)="playAudio()"  *ngIf="isPlaying"></i>
+        <i data-bs-toggle="tooltip" title="Puase (Space)" class="bi bi-app" [ngClass]="{'disabled': !created}" (click)="puase()"></i>
+        <i data-bs-toggle="tooltip" data-bs-placement="top" title="Play repeat" class=" bi bi-arrow-counterclockwise" [ngClass]="{'disabled': !created}"(click)="playRepeat()" *ngIf="!playAgain"></i>
+        <i data-bs-toggle="tooltip" data-bs-placement="top" title="Play once" class="bi bi-arrow-repeat" [ngClass]="{'disabled': !created}" (click)="playRepeat()" *ngIf="playAgain"></i>
+        <i data-bs-toggle="tooltip" data-bs-placement="top" title="Back forwark" class="bi bi-skip-start"  [ngClass]="{'disabled': !created}" (click)="BackForward()"></i>
+        <i data-bs-toggle="tooltip" data-bs-placement="top" title="Increase speed" class="bi bi-rewind" (click)="decreaseSpeed()" [ngClass]="{'disabled': !created}"></i>
+        <i data-bs-toggle="tooltip" data-bs-placement="top" title="decrease speed" class="bi bi-fast-forward" (click)="increaseSpeed()" [ngClass]="{'disabled': !created}"></i>
+        <i data-bs-toggle="tooltip" data-bs-placement="top" title="Go to the end" class="bi bi-skip-end" [ngClass]="{'disabled': !created}" (click)="goToTheEnd()"></i>
+      </div>
+    </div>
+    <div style="padding: 5px; border-right: 1px solid black; color: white">
+      <small>{{ hours }}</small
+      >: <small>{{ minutes }}</small
+      >:
+      <small style="width: 41px; padding: 0">{{
+        currentTimeInSeconds === 0 ? "00.000" : currentTimeInSeconds
+      }}</small>
+    </div>
+  
+    <div class="regionPart">
+      <div class="regionChild">
+        <span style="padding-bottom: 5px"> Start </span>
+        <span class="regionTime">
+          <small>{{ startHours }}</small
+          >: <small>{{ startMinutes }}</small
+          >:
+          <small style="width: 41px; padding: 0">{{
+            startCropSeconds === 0 ? "00.000" : startCropSeconds
+          }}</small>
+        </span>
+      </div>
+      <div class="regionChild">
+        <span style="padding-bottom: 5px"> End </span>
+        <span class="regionTime">
+          <small>{{ endHours }}</small
+          >: <small>{{ endMinutes }}</small
+          >:
+          <small style="width: 41px; padding: 0">{{
+            endCropSeconds === 0 ? "00.000" : endCropSeconds
+          }}</small>
+        </span>
+      </div>
+  
+      <div class="regionChild" style="border-right: 1px solid #181818">
+        <span style="padding-bottom: 5px"> Length </span>
+        <span class="regionTime">
+          <small>{{ lengthHours }}</small
+          >: <small>{{ lengthMinutes }}</small
+          >:
+          <small style="width: 41px; padding: 0">{{
+            lengthCropSeconds === 0 ? "00.000" : lengthCropSeconds
+          }}</small>
+        </span>
+      </div>
+    </div>
+  
+    <canvas id="canvas"></canvas>
+  </div>
+  
+
+
+  <div id="slider-container"></div>

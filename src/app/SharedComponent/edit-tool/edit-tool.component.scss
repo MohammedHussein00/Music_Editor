@@ -1,0 +1,23 @@
+.perant{
+    background-color: #2e2e2e;
+    border-top-left-radius: 6px;
+    border-top-right-radius: 6px;
+    border-bottom: 1px solid #3c3b38;
+    padding: 6px;
+    transition: 0.7s;
+  }
+  a{
+    padding: 3px 7px;
+    border: 1px solid #2e2e2e;
+    color:white;
+  }
+  a:hover{
+    border-radius: 5px;
+    border: 1px solid blue;
+    color:blue;
+  }
+  .disabled {
+    opacity: 0.5; /* Reduce opacity for disabled state */
+    pointer-events: none; /* Disable pointer events for disabled state */
+  }
+  

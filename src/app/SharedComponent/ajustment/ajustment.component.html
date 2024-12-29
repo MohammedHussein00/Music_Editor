@@ -1,0 +1,36 @@
+<div class="perant">
+  <div class="header active ">
+    <h6>
+      Adjustment
+    </h6>
+  </div>
+  <ul class="data" style="min-height: 244px;" [style.height.px]="h - 46">
+
+
+
+
+    <div class="card d-flex justify-content-center">
+      <p-knob #knob1 [(ngModel)]="value1" [min]="-40" [max]="40" (onChange)="updateFilter(0, $event)"></p-knob>
+      <p-knob #knob2 [(ngModel)]="value2" [min]="-40" [max]="40" (onChange)="updateFilter(1, $event)"></p-knob>
+      <p-knob #knob3 [(ngModel)]="value3" [min]="-40" [max]="40" (onChange)="updateFilter(2, $event)"></p-knob>
+      <p-knob #knob4 [(ngModel)]="value4" [min]="-40" [max]="40" (onChange)="updateFilter(3, $event)"></p-knob>
+      <p-knob #knob5 [(ngModel)]="value5" [min]="-40" [max]="40" (onChange)="updateFilter(4, $event)"></p-knob>
+      <p-knob #knob6 [(ngModel)]="value6" [min]="-40" [max]="40" (onChange)="updateFilter(5, $event)"></p-knob>
+      <p-knob #knob7 [(ngModel)]="value7" [min]="-40" [max]="40" (onChange)="updateFilter(6, $event)"></p-knob>
+      <p-knob #knob8 [(ngModel)]="value8" [min]="-40" [max]="40" (onChange)="updateFilter(7, $event)"></p-knob>
+      <p-knob #knob9 [(ngModel)]="value9" [min]="-40" [max]="40" (onChange)="updateFilter(8, $event)"></p-knob>
+      <p-knob #knob10 [(ngModel)]="value10" [min]="-40" [max]="40" (onChange)="updateFilter(9, $event)"></p-knob>
+    </div>
+    
+
+
+
+
+  </ul>
+
+
+
+
+
+</div>
+

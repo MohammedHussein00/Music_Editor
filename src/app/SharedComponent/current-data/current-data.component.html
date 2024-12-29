@@ -1,0 +1,49 @@
+<div class="container" #container2>
+  <div class="perant" [style.height.px]="div1Height" #cont>
+    <div class="header active">
+      <div style="display: flex; justify-content: space-between">
+        <label for="file" style="cursor: pointer; display: flex">
+          <svg class="svg1" style="width: 24px" version="1.1" xmlns="http://www.w3.org/2000/svg"  xmlns:xlink="http://www.w3.org/1999/xlink"  x="0px"  y="0px"  viewBox="0 0 256 256"  enable-background="new 0 0 256 256"  xml:space="preserve"><g>  <g>    <g>      <path        fill="#ffffff"        data-title="Layer 0"        xs="0"        d="M162.3,87.6L112,103c-6.1,1.7-11.1,8.1-11.1,14.2v44.3c0,0,0,0.7,0,0.7c0,0-3.7-2.5-11.8-1.3c-11.9,1.7-21.6,10.8-21.6,20.4c0,9.6,9.7,15.5,21.6,13.8c11.9-1.7,20.7-10.5,20.7-20.2c0,0,0-32.9,0-37.2s5.1-6.1,5.1-6.1l44.5-13.9c0,0,4.9-1.7,4.9,2.9c0,4.6,0,32.8,0,32.8l0,0c0,0-4.5-2.6-12.6-1.6c-11.9,1.4-21.6,10.4-21.6,20c0,9.6,9.7,15.7,21.6,14.2c11.9-1.5,21.6-10.4,21.6-20V95.5C173.4,89.4,168.4,85.9,162.3,87.6z"      />      <path        fill="#ffffff"        data-title="Layer 1"        xs="1"        d="M218.8,50.8H37.2c-15,0-27.2,12.2-27.2,27.2v127.1c0,15,12.2,27.2,27.2,27.2h181.5c15,0,27.2-12.2,27.2-27.2V78.1C246,63.1,233.8,50.8,218.8,50.8z M227.8,205.2c0,5-4.1,9.1-9.1,9.1H37.2c-5,0-9.1-4.1-9.1-9.1V78.1c0-5,4.1-9.1,9.1-9.1h181.5c5,0,9.1,4.1,9.1,9.1V205.2z"/>
+          <path fill="#ffffff" data-title="Layer 2" xs="2" d="M82.6,23.6H37.2c-15,0-27.2,12.2-27.2,27.2v36.3c0,0,2.7-27.2,27.2-27.2h72.6v-9.1C109.8,35.8,97.7,23.6,82.6,23.6z"/></g><g></g><g></g><g></g><g></g><g></g><g></g>    <g></g>    <g></g>    <g></g>    <g></g>    <g></g>    <g></g>    <g></g>    <g></g>    <g></g>  </g></g></svg>
+
+          <svg class="svg2" style="width: 24px" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 256 256" enable-background="new 0 0 256 256" xml:space="preserve"> <g> <g> <g><path fill="#0000ff" data-title="Layer 0" xs="0"d="M162.3,87.6L112,103c-6.1,1.7-11.1,8.1-11.1,14.2v44.3c0,0,0,0.7,0,0.7c0,0-3.7-2.5-11.8-1.3c-11.9,1.7-21.6,10.8-21.6,20.4c0,9.6,9.7,15.5,21.6,13.8c11.9-1.7,20.7-10.5,20.7-20.2c0,0,0-32.9,0-37.2s5.1-6.1,5.1-6.1l44.5-13.9c0,0,4.9-1.7,4.9,2.9c0,4.6,0,32.8,0,32.8l0,0c0,0-4.5-2.6-12.6-1.6c-11.9,1.4-21.6,10.4-21.6,20c0,9.6,9.7,15.7,21.6,14.2c11.9-1.5,21.6-10.4,21.6-20V95.5C173.4,89.4,168.4,85.9,162.3,87.6z"/><path fill="#0000ff"data-title="Layer 1" xs="1"d="M218.8,50.8H37.2c-15,0-27.2,12.2-27.2,27.2v127.1c0,15,12.2,27.2,27.2,27.2h181.5c15,0,27.2-12.2,27.2-27.2V78.1C246,63.1,233.8,50.8,218.8,50.8z M227.8,205.2c0,5-4.1,9.1-9.1,9.1H37.2c-5,0-9.1-4.1-9.1-9.1V78.1c0-5,4.1-9.1,9.1-9.1h181.5c5,0,9.1,4.1,9.1,9.1V205.2z"/><path fill="#0000ff"data-title="Layer 2"xs="2"d="M82.6,23.6H37.2c-15,0-27.2,12.2-27.2,27.2v36.3c0,0,2.7-27.2,27.2-27.2h72.6v-9.1C109.8,35.8,97.7,23.6,82.6,23.6z"/>
+          </g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g><g></g></g></g></svg>
+        </label>
+        <input
+          type="file"
+          hidden
+          id="file"
+          name="file"
+          (change)="onchange($event)"
+          multiple
+        />
+      
+        <app-sort-data (sendData)="Order($event)"></app-sort-data>
+      </div>
+    </div>
+    <ul
+      class="data"
+      style="height: div1Height - 41"
+      [style.height.px]="div1Height - 41"
+    >
+      <li *ngFor="let file of selectedFiles" (click)="selectedCurrentFile(file)" [class.active]="lastSelected===file">
+        <i class="bi bi-music-note col-11">  {{ file.name }}</i>
+
+        <i class="trash bi bi-trash " (click)="delete(file)"></i>
+      </li>
+    </ul>
+  </div>
+  <div
+    class="resize-line"
+    #resizeLine
+    (mousedown)="startResize($event)"
+    #resizeLine2
+  ></div>
+
+
+  <app-ajustment
+    style="display: flex; justify-content: end; min-height: 290px"
+    [style.height.px]="div2Height"
+    [height]="div2Height"
+  ></app-ajustment>
+</div>

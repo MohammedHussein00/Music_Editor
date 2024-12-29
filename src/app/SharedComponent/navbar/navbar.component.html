@@ -1,0 +1,167 @@
+<div class="nav">
+    <div class="col-8">
+      <ul class="navHead">
+          <li class="nav-item">
+              <a class="navbar-brand" >File</a>
+          </li>
+          <li class="nav-item" >
+            <a class="navbar-brand" >Edit</a>
+  
+          </li>
+          <li class="nav-item" >
+            <a class="navbar-brand" >View</a>
+          </li>
+          <li class="nav-item" >
+            <a class="navbar-brand" >Help</a>
+          </li>
+      </ul>
+  
+      <ul>
+        <li>Edit</li>
+      </ul>
+    </div>
+    <div class="col-4 p-2" style="    display: flex; align-items: center; justify-content: space-evenly;">
+  
+  
+  
+      <!-- Button trigger modal -->
+  <button type="button" class="btn btn-primary" *ngIf="!isLogin" (click)="open()" >Login</button>
+  <p *ngIf="isLogin" class="name">{{name}}</p>
+  
+  <img *ngIf="isLogin" class="rounded-circle" [src]="imagePath!='undefined'?imagePath:'assets/profile1.png'" alt="" style="width:23px">
+  <div style="font-size:19px;"  *ngIf="isLogin"  data-bs-toggle="modal" data-bs-target="#exampleModal1"> <i class="bi bi-gear"></i></div>
+  
+  
+  
+  
+  
+  <p-dialog 
+  header="Login" 
+  [(visible)]="displayModal" 
+  [modal]="true" 
+  [style]="{width: '30vw'}" 
+  [baseZIndex]="10000"
+  [dismissableMask]="true"
+  [contentStyle]="{'background-color': '#595656'}"
+  [styleClass]="'custom-dialog-class'"
+>
+
+  <form [formGroup]="login" (ngSubmit)="loginFun()">
+    <div class="form-group">
+      <label for="email" style="color: #ffffff;font-size: 13px;">Email address</label>
+      <input type="email" id="email" class="form-control" formControlName="email" pInputText
+        [ngClass]="{'ng-invalid ng-dirty': login.controls['email'].invalid && login.controls['email'].touched, 'ng-valid': !login.controls['email'].invalid || login.controls['email'].touched}">
+      <div *ngIf="login.controls['email'].invalid && login.controls['email'].touched" class="invalid-feedback">
+        <p *ngIf="login.controls['email'].value === ''">This field is required</p>
+        <p *ngIf="login.controls['email'].value !== ''">Must be a valid email or username</p>
+      </div>
+    </div>
+
+    <div class="form-group mt-3">
+      <label for="password" style="color: #ffffff;font-size: 13px;">Password</label>
+      <input type="password" id="password" class="form-control" formControlName="password" pInputText
+        [ngClass]="{'ng-invalid ng-dirty': login.controls['password'].invalid && login.controls['password'].touched, 'ng-valid': !login.controls['password'].invalid || login.controls['password'].touched}">
+      <div *ngIf="login.controls['password'].invalid && login.controls['password'].touched" class="invalid-feedback">
+        <p>This field is required</p>
+      </div>
+    </div>
+
+    <div class="invalid-feedback mt-1" *ngIf="messageError" style="display: block; text-align: center;">
+      * Email or Password is Incorrect? Try again.
+    </div>
+
+    <button type="submit" pButton label="Login" class="btn btn-primary col-12 mt-3"></button>
+  </form>
+
+  <div class="col-12 mt-1 mb-1 text-center" style="color: #1a1a1a;">or</div>
+
+  <!-- Google login button -->
+  <button pButton label="Login with Google" class="btn btn-light col-12 mt-3 d-flex justify-content-around align-items-center" (click)="loginWithGoogle()">
+    <img src="assets/google.png" alt="" style="width: 18px; padding-top: 3px; background-color: white;">
+  </button>
+
+  <!-- Facebook login button -->
+  <div class="d-flex justify-content-center mt-3">
+    <button pButton label="Login with Facebook" class="btn btn-light col-12 d-flex justify-content-around align-items-center" onclick="fbLogin()">
+      <img src="assets/facebook.png" alt="" style="width: 18px; padding-top: 3px; background-color: white;">
+    </button>
+  </div>
+</p-dialog>
+
+  
+  
+  
+  
+  
+    <!-- seting modal -->
+  
+  
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModal1" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog modal-lg">
+        <div class="modal-content" style="border-radius: 0;">
+          <div class="seting">
+            <div class="headerSeting">
+              <p class="col-11" style="border-right: 1px solid black;padding-left:2px;">Personal profile</p>
+  
+              <span class="close col-1">
+                <i class="bi bi-x-lg"></i>
+              </span>
+            </div>
+            <div class="dataProfile ">
+              <div class=" border-right">
+                <div class="d-flex flex-column align-items-center text-center p-3 py-5">
+                  <label class="poster" for="poster"><img class="rounded-circle mt-5 bg-light" style="cursor:pointer;width: 50px;height:50px;" src="{{base64}}" alt="">  </label>
+                  <input hidden type="file"  name="poster" id="poster"   accept="image/*" placeholder="" >
+                  <p class="name" style="font-size: 14px;">{{name}}</p><span style="font-family: 'Playball', cursive;color: azure;">{{email}}</span><span> </span></div>
+  
+  
+            </div>
+  
+            <div>
+              <div class=" border-right">
+                <div class="p-3 m-3" style="outline: 1px solid #272626;border: 1px solid #000000;">
+                    <div class="d-flex flex-column justify-content-start  align-items-center mb-3">
+                    </div>
+                    <div class="row mt-2">
+                        <div class="d-flex align-items-srart flex-column col-md-6"><label class="labels">Name</label><input   style="padding: 0 0 0 7px;" type="text" class="form-control"  value=""></div>
+                        <div class="d-flex align-items-srart flex-column col-md-6"><label class="labels">Family</label><input style="padding: 0 0 0 7px;" type="text" class="form-control" value="" ></div>
+                      </div>
+                    <div class="row mt-3">
+                        <div class="d-flex align-items-start flex-column col-md-12 mb-3"><label class="labels">Email</label><input    style="padding: 0 0 0 7px;" type="email" class="form-control"  value=""></div>
+                        <div class="d-flex align-items-start flex-column col-md-12 mb-3"><label class="labels">Password</label><input style="padding: 0 0 0 7px;" type="password" class="form-control"  value=""></div>
+                        <div class="d-flex align-items-start flex-column col-md-12 mb-3"><label class="labels">Confirm password</label><input style="padding: 0 0 0 7px;" type="password" class="form-control"  value=""></div>
+                        <div class="d-flex align-items-start flex-column col-md-12 mb-3"><label class="labels">Phone number</label><input     style="padding: 0 0 0 7px;" type="number" class="form-control"  value=""></div>
+                    </div>
+  
+                </div>
+            </div>
+  
+            </div>
+            </div>
+            <div class="d-flex justify-content-end">
+              <button type="button" class="btn mb-2" style="margin-right: 40px; background-color: #000000;color:azure;padding: 0 30px;"  data-bs-dismiss="modal" (click)="logout()">Update</button>
+              <button type="button" class="btn mb-2"  style="margin-right: 40px;background-color: #000000;color:azure;padding: 0 30px;" data-bs-dismiss="modal" (click)="logout()">Cancel</button>
+            </div>
+          </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  
+  </div>
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
